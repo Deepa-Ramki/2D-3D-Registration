@@ -23,7 +23,7 @@
 
 1. **CT Volume Processing**:
    - CT slices of a spine phantom are collected and stacked to create a 3D volume.
-   - Sagittal and coronal views are generated from the volumetric data.
+   - `Sagittal and coronal views` are generated from the volumetric data.
 
 2. **Annotation and Training**:
    - Images are annotated using `makesense.ai`, labeling vertebral levels (L1, L2, L3, L4, L5).
@@ -34,7 +34,7 @@
    - These coordinates are used to crop the CT volume for focused visualization.
 
 4. **DRR Generation**:
-   - DRRs are generated using the DiffDRR module from the cropped CT volume.
+   - DRRs are generated using the DiffDRR module from the cropped `CT volume`.
 
 </details>
 
@@ -57,7 +57,7 @@ To address stylistic differences between DRR and X-ray images:
 
 2. **Optimization**:
    - Gradient-normalized cross-correlation is used as the registration metric.
-   - Various optimization techniques (SGD with momentum, Adam optimizer) are employed to improve efficiency and accuracy.
+   - Various optimization techniques (`SGD with momentum, Adam optimizer`) are employed to improve efficiency and accuracy.
 
 3. **Evaluation**:
    - Registration accuracy and computational efficiency are evaluated through qualitative and quantitative analyses.
@@ -67,11 +67,11 @@ To address stylistic differences between DRR and X-ray images:
 ## <div align="center">Methodology</div>
 
 <p align="center">
-  <img src=Figure_commonmark/Screenshot%202024-06-04%20161929.png>
+  <img src=FIGURE_COMMONMARK/Block diagram.png>
 </p>
 <div align = "center">
   
-  :small_orange_diamond: Fig 4:Block diagram of proposed work: Graphical user interface (GUI) using Vertebrae  3D segmentation
+  :small_orange_diamond: Fig 4:Block diagram of proposed work
 </div>
 
 ## <div align="center">Pre-requisites</div>
