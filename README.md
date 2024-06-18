@@ -18,72 +18,50 @@
 ## <div align="center">Getting Started</div>
 
 <details>
-  <summary><i>System Workflow</i></summary>
-
-  
-The process starts with acquiring X-ray images of the patient's spine from two angles: `anterior-posterior (AP)` and `lateral-posterior (LP)`
-
-**Image Preprocessing**:These images are pre-processed and augmented to improve their quality and diversity for training the model
-<br/>
-
-**Model Training**:</ln> The processed images are used to train a deep learning model to automatically segment (identify) vertebrae in X-ray images.
-<br/>
-
-**Surgical Planning**:
-    - Surgeons upload new AP and LP X-ray images for planning.
-    - The GUI displays these images, allowing surgeons to select the vertebra of interest for screw placement.
-    - Utilizing vertebra segmentation results, the GUI automatically adds screws to the corresponding vertebral bounding boxes.
-    - Surgeons can then simulate and adjust screw placement on the patient's spine within the GUI.
-    - Once satisfied, the GUI generates a surgical plan detailing screw size, type, and location.
-<br/>
+  <summary><i>DRR Generation</i></summary>
 
 
-</details>
-<details open>
-<summary><i>Vertebrae Segmentation with Improved YOLOv5</i></summary>
+1. **CT Volume Processing**:
+   - CT slices of a spine phantom are collected and stacked to create a 3D volume.
+   - Sagittal and coronal views are generated from the volumetric data.
 
-  
-**Image Input**: The system starts with AP and LP X-ray images for vertebrae segmentation.
+2. **Annotation and Training**:
+   - Images are annotated using `makesense.ai`, labeling vertebral levels (L1, L2, L3, L4, L5).
+   - Two YOLO-V5 models are trained: one for sagittal and another for coronal views.
 
-<br/>
-<div align="center">
-<div style="display: flex; flex-direction: row;">
-    <img class="img"src="Figure_commonmark/testSET07AP.jpg" width="300">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img class="img"src="Figure_commonmark/testSET07AP.jpg" width="300"> 
-</div>
-</div>
- <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   :small_orange_diamond: Fig 1: Anterior-Posterior (AP) of Spine 
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   :small_orange_diamond: Fig 2: Lateral-Posterior (LP) of Spine</p>
-<br/>
+3. **Bounding Box Prediction**:
+   - The trained YOLO-V5 models predict bounding box coordinates for regions of interest in CT images.
+   - These coordinates are used to crop the CT volume for focused visualization.
 
-**Spine-Vision Model**: These images are fed into a custom deep learning model called "Spine-Vision" for segmentation.This model is based on the `YOLOv5` architecture with two key improvements:
-        -  `Attention Feature (AF)` module: This module helps the model learn complex features from spine X-rays, particularly important due to variations in vertebrae shape and size.
-        - `Channel Attention (CA)` module: This module helps improve object localization and mitigates the slight decrease in confidence scores caused by the AF module.
-    - The model outputs bounding boxes for each vertebra in the images.
-    <br/>
-    
+4. **DRR Generation**:
+   - DRRs are generated using the DiffDRR module from the cropped CT volume.
+
 </details>
 
 <details open>
-<summary><i>Pedicle Screw Placement and Planning</i></summary>
+<summary><i>Neural Style Transfer</i></summary>
   
-**Screw Visualization**: Pedicle screws are visualized as 3D cylinders with X, Y, and Z dimensions. However, they are displayed as 2D circles on the AP and LP images.
-<p align="center">
-  <img src="Figure_commonmark/image.png" width ="600" height ="400" >
-</p>
+To address stylistic differences between DRR and X-ray images:
+- The X-ray image is used as the content image.
+- The DRR image is used as the style image.
+- Neural style transfer is performed using VGG19 to maintain the content of the X-ray while incorporating the style of the DRR.
 
-<div align = "center">
+</details>
+
+<details open>
+<summary><i>Registration Process</i></summary>  
   
-  :small_orange_diamond: Fig 3: Optimal positioning and strategic arrangement of screws on AP and LP images</span>
-</div>
+1. **Rigid Transformation**:
+   - A rigid transformation is applied to align DRRs with X-ray images using translation and rotation parameters.
 
-<br/>
 
- **Planning Process:**
-  Surgeons label the vertebra of interest.The system automatically segments the vertebra using the Spine-Vision model. Based on the segmentation results, a screw is automatically positioned within the vertebra's bounding box. Surgeons can then adjust screw placement in either the AP or LP image. Any adjustments are automatically reflected in the corresponding image due to the shared 3D representation of the screw. The screw is defined by two points: `Entry point`: The location on the spine where the surgeon makes an incision for screw insertion. `Target point` : The desired endpoint within the vertebra for screw placement.
+2. **Optimization**:
+   - Gradient-normalized cross-correlation is used as the registration metric.
+   - Various optimization techniques (SGD with momentum, Adam optimizer) are employed to improve efficiency and accuracy.
+
+3. **Evaluation**:
+   - Registration accuracy and computational efficiency are evaluated through qualitative and quantitative analyses.
+
 </details>
 
 ## <div align="center">Methodology</div>
