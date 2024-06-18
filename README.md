@@ -65,13 +65,13 @@ To address stylistic differences between DRR and X-ray images:
 </details>
 
 ## <div align="center">Methodology</div>
-
 <p align="center">
-  <img src= FIGURE_COMMONMARK/Block diagram.png>
+  <img src="FIGURE_COMMONMARK/Block diagram.png" alt="Block Diagram">
 </p>
+
 <div align = "center">
   
-  :small_orange_diamond: Fig 4:Block diagram of proposed work
+  :small_orange_diamond: Fig :Block diagram of proposed work
 </div>
 
 ## <div align="center">Pre-requisites</div>
