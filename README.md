@@ -117,7 +117,7 @@ To include DiffDRR in your project, follow these steps:
 ## <div align="center">Installation</div>
 :arrow_right:Clone the Repository
 ```bash
-git clone https://github.com/yourusername/2D-3D-Registration.git
+git clone https://github.com/Deepa-Ramki/2D-3D-Registration.git
 ```
 
 :arrow_right:Navigate to the Project Directory
