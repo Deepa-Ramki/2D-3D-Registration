@@ -71,8 +71,23 @@ To address stylistic differences between DRR and X-ray images:
 
 <div align = "center">
   
-  :small_orange_diamond: Fig :Block diagram of proposed work
+  :small_orange_diamond: Fig :Block diagram of proposed work.The module pipeline of iVReg incorporates YOLOv5,
+C-Arm projection matrix, DRR generator, style transfer, and registration.
 </div>
+
+
+
+<p align="center">
+  <img src="FIGURE_COMMONMARK/Diagram .png">
+</p>
+
+<div align = "center">
+  
+  :small_orange_diamond: Fig :DRR generation from Lumbar Spine Phantom for AP and LP view positions.
+The AP and LP source positions could be easily computed from the C-Arm projection
+matrices
+</div>
+
 
 ## <div align="center">Pre-requisites</div>
 Before installing and running the project, ensure you have the following prerequisites:
