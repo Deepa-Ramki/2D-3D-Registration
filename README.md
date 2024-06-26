@@ -1,9 +1,8 @@
 <h1 align="center">iVReg: Individual Vertebrae 2D/3D Registration between Fluoroscopic and CT images </h1>
 
-<p  align="center"> Minimally Invasive Spine (MIS) Surgery has become increasingly popular due to advancements in image-guided techniques, which provide surgeons with comprehensive views of the surgical area without extensive spine exposure. The proposed iVReg introduces a novel methodology for registering pre-operative 3D Computed Tomography
-(CT) data with intra operative 2D C-Arm fluoroscopic images through 2D-3D using YOLOv5 for precise identification and cropping of individual vertebrae on CT. The C-Arm camera projection matrix is used for generating the closely matching Digitally Reconstructed Radiographs (DRR’S) which greatly minimizes the chance of being stuck in local minima. The imaging attribute difference between the C-Arm and CT is taken care using neural style transfer. The experimental results using
-iVReg demonstrate the efficacy of this approach in terms of registration accuracy with other existing methods.
-
+<p  align="center">  
+  
+ Minimally Invasive Spine Surgery has become increasingly popular due to advancements in image-guided techniques, which provide surgeons with comprehensive views of the surgical area without extensive spine exposure. The proposed iVReg introduces a novel methodology for registering pre-operative `3D Computed Tomography` (CT) data with intra-operative 2D C-Arm fluoroscopic images through `2D-3D registration` using YOLOv5 for precise identification and cropping of individual vertebrae on CT. The C-Arm camera projection matrix is used for generating closely matching `Digitally Reconstructed Radiographs (DRRs)`, which greatly minimizes the chance of being stuck in local minima. The imaging attribute difference between the C-Arm and CT is handled using neural style transfer. The experimental results using iVReg demonstrate the efficacy of this approach in terms of registration accuracy compared to other existing methods.
 </p>
 
 <h3 > <i>Index Terms</i> </h3> 
@@ -67,7 +66,7 @@ To address stylistic differences between DRR and X-ray images:
 
 ## <div align="center">Methodology</div>
 <p align="center">
-  <img src="FIGURE_COMMONMARK/Block diagram.png" alt="Block Diagram">
+  <img src="FIGURE_COMMONMARK/Block..1.png" alt="Block Diagram">
 </p>
 
 <div align = "center">
