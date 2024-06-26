@@ -1,8 +1,9 @@
-<h1 align="center">2D/3D Fluoro-CT Spine Registration</h1>
+<h1 align="center">iVReg: Individual Vertebrae 2D/3D Registration between Fluoroscopic and CT images </h1>
 
-<p  align="center">  
-  
-   In this study, we propose a comprehensive methodology for surgical planning and navigation by integrating 2D and 3D imaging techniques. The methodology includes four key processes: `DRR generation`, `neural style transfer`, and registration between DRRs and X-ray images. CT volumes of a spine phantom were processed using YOLO-V5 models to crop regions of interest and generate DRRs. Neural style transfer addressed stylistic differences between DRRs and X-rays while preserving content. Registration using rigid transformation aligned DRRs with X-rays, with gradient-normalized cross-correlation as the metric and optimization techniques like `stochastic gradient descent with momentum` for convergence.
+<p  align="center"> Minimally Invasive Spine (MIS) Surgery has become increasingly popular due to advancements in image-guided techniques, which provide surgeons with comprehensive views of the surgical area without extensive spine exposure. The proposed iVReg introduces a novel methodology for registering pre-operative 3D Computed Tomography
+(CT) data with intra operative 2D C-Arm fluoroscopic images through 2D-3D using YOLOv5 for precise identification and cropping of individual vertebrae on CT. The C-Arm camera projection matrix is used for generating the closely matching Digitally Reconstructed Radiographs (DRR’S) which greatly minimizes the chance of being stuck in local minima. The imaging attribute difference between the C-Arm and CT is taken care using neural style transfer. The experimental results using
+iVReg demonstrate the efficacy of this approach in terms of registration accuracy with other existing methods.
+
 </p>
 
 <h3 > <i>Index Terms</i> </h3> 
