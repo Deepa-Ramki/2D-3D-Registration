@@ -132,12 +132,12 @@ To include DiffDRR in your project, follow these steps:
 ## <div align="center">Installation</div>
 :arrow_right:Clone the Repository
 ```bash
-git clone https://github.com/Deepa-Ramki/2D-3D-Registration.git
+git clone https://github.com/Deepa-Ramki/iVReg.git
 ```
 
 :arrow_right:Navigate to the Project Directory
 ```bash
-cd 2D-3D-Registration
+cd iVReg
 ```
 :arrow_right:Install Dependencies
 ```bash
