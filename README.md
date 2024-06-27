@@ -10,7 +10,7 @@
  :diamond_shape_with_a_dot_inside:Individual Vertebrae Registration
  :diamond_shape_with_a_dot_inside:2D/3D Registration
   :diamond_shape_with_a_dot_inside: Surgical planning
-  :diamond_shape_with_a_dot_inside:Digitally Reconstructed Radiographs
+  :diamond_shape_with_a_dot_inside:DRR
   :diamond_shape_with_a_dot_inside:Style Transfer
   :diamond_shape_with_a_dot_inside:YOLOv5
 </div>
