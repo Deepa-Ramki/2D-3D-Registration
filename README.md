@@ -52,15 +52,14 @@ To address stylistic differences between DRR and X-ray images:
 <summary><i>Registration Process</i></summary>  
   
 1. **Rigid Transformation**:
-   - A rigid transformation is applied to align DRRs with X-ray images using translation and rotation parameters.
+   - A rigid transformation is applied to align DRRs with X-ray images using translation and rotation parameters obtained from projection matrix.
 
 
 2. **Optimization**:
-   - Gradient-normalized cross-correlation is used as the registration metric.
-   - Various optimization techniques (`SGD with momentum, Adam optimizer`) are employed to improve efficiency and accuracy.
+   - Multi-Scaled normalized cross-correlation is used as the registration metric.
+   - Various optimization techniques (`SGD, SGD with momentum, SGD with Dampening and Adam optimizer`) are employed to fine tune the registration process.
 
-3. **Evaluation**:
-   - Registration accuracy and computational efficiency are evaluated through qualitative and quantitative analyses.
+
 
 </details>
 
